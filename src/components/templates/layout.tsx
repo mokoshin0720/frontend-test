@@ -3,7 +3,7 @@ import React from 'react';
 
 interface Props {
     title: string;
-    children?: React.ReactNode;
+    children: React.ReactNode;
 }
 
 const Layout = (props: Props) => {
@@ -12,14 +12,12 @@ const Layout = (props: Props) => {
             <Head>
                 <title>{props.title}</title>
             </Head>
-            <main>
-                <div>{props.children}</div>
-            </main>
-            <footer>
-                <div className='bg-gray-200'>
-                    <p>here</p>
-                </div>
-            </footer>
+            <div className='flex flex-col h-screen'>
+                <main className='flex-1 overflow-y-auto'>{props.children}</main>
+                <footer className=' bg-gray-400'>
+                    <p>footer</p>
+                </footer>
+            </div>
         </div>
     );
 };
