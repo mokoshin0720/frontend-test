@@ -1,9 +1,10 @@
 import type { NextPage } from 'next';
+import Card from '@/components/organisms/card';
 
 const Home: NextPage = () => {
     return (
-        <div>
-            <p>test</p>
+        <div className='bg-gray-300 h-screen'>
+            <Card></Card>
         </div>
     );
 };
