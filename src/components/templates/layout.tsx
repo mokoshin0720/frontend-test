@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
+import Footer from 'components/organisms/footer';
 
 interface Props {
     title: string;
@@ -14,9 +15,7 @@ const Layout = (props: Props) => {
             </Head>
             <div className='flex flex-col h-screen'>
                 <main className='flex-1 overflow-y-auto'>{props.children}</main>
-                <footer className=' bg-gray-400'>
-                    <p>footer</p>
-                </footer>
+                <Footer></Footer>
             </div>
         </div>
     );
