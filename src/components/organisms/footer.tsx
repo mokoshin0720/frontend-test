@@ -5,7 +5,7 @@ import settingPic from '../../../public/setting.png';
 
 const Footer = () => {
     return (
-        <div className='flex justify-evenly p-4'>
+        <div className='flex justify-evenly p-4 shadow'>
             <div>
                 <Image src={homePic} width={32} height={32} alt='home' />
             </div>

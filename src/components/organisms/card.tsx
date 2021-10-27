@@ -1,11 +1,20 @@
 import Image from 'next/image';
-import cardPic from '../../../public/card.png';
 
-const Card = () => {
+interface cardProps {
+    title: string;
+    content: string;
+    img: StaticImageData;
+}
+
+const Card = (props: cardProps) => {
     return (
-        <div className='bg-red-200 rounded-lg content-center'>
-            <div>
-                <Image src={cardPic} width={512} height={128} alt='card' />
+        <div className='overflow-hidden rounded-lg h-90 w-80 m-auto bg-white'>
+            <div className='max-h-40 w-full object-cover'>
+                <Image src={props.img} alt='card' />
+            </div>
+            <div className='w-full p-4'>
+                <p className='text-xl font-bold'>{props.title}</p>
+                <p className='font-light text-md'>{props.content}</p>
             </div>
         </div>
     );
