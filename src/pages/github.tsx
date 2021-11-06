@@ -4,9 +4,22 @@ import getPhotos from 'lib/photos';
 type Props = {
     photosData: {
         photos: {
-            contents: [];
+            contents: Content[];
             totalCount: number;
+            offset: number;
+            limit: number;
         };
+    };
+};
+
+type Content = {
+    id: string;
+    title: string;
+    description: string;
+    image: {
+        url: string;
+        height: number;
+        width: number;
     };
 };
 
@@ -22,13 +35,16 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Photos = ({ photosData }: Props) => {
     const length: number = photosData.photos.totalCount;
-    console.log(photosData);
+    const id: string = photosData.photos.contents[0].id;
     console.log(length);
+    console.log(id);
 
     return (
         <div>
-            <p>test</p>
-            <p>{length}</p>
+            <p>length: {length}</p>
+            <p>id: {id}</p>
+            <p>title: {photosData.photos.contents[0].title}</p>
+            <p>image-url: {photosData.photos.contents[0].image.url}</p>
         </div>
     );
 };
