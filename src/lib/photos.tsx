@@ -17,7 +17,7 @@ export type Content = {
 };
 
 const getPhotos = async () => {
-    const myHeaders = new Headers();
+    const myHeaders: Headers = new Headers();
     myHeaders.append('X-API-KEY', 'b279aadc-834e-4977-80e2-e7ba2c825bb7');
     const url: string = `https://ispec-test.microcms.io/api/v1/photo`;
 

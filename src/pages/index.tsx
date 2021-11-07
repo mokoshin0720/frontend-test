@@ -1,8 +1,8 @@
 import type { NextPage, GetStaticProps } from 'next';
 import Card from '@/components/organisms/card';
-import getPhotos, { Content, Photos } from 'lib/photos';
+import getPhotos, { Photos } from 'lib/photos';
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps | undefined = async () => {
     const json = await getPhotos();
     const contents = json?.photos.contents;
 
@@ -21,15 +21,15 @@ const Home: NextPage<Photos> = ({ contents }) => {
             </div>
             <div>
                 <div>
-                    {contents.map((value, key) => {
+                    {contents.map((content, key) => {
                         return (
                             <div className='p-7' key={key}>
                                 <Card
-                                    title={value.title}
-                                    description={value.description}
-                                    img={value.image.url}
-                                    width={value.image.width}
-                                    height={value.image.height}
+                                    title={content.title}
+                                    description={content.description}
+                                    img={content.image.url}
+                                    width={content.image.width}
+                                    height={content.image.height}
                                 />
                             </div>
                         );
