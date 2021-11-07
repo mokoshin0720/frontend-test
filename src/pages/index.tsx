@@ -14,8 +14,6 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Home: NextPage<Photos> = ({ contents }) => {
-    console.log(contents);
-
     return (
         <div className='bg-gray-100'>
             <div className='pl-10 pt-8'>

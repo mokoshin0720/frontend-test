@@ -43,7 +43,7 @@ const getPhotos = async () => {
 
     if (!photos) return null;
 
-    // json.photosData.photos.contents = json.photosData.photos.contents.sort(comparison);
+    photos.contents = photos.contents.sort(comparison);
 
     return {
         photos,
