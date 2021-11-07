@@ -1,7 +1,4 @@
 import type { NextPage, GetStaticProps } from 'next';
-import cardPic1 from '../../public/card1.png';
-import cardPic2 from '../../public/card2.png';
-import cardPic3 from '../../public/card3.png';
 import Card from '@/components/organisms/card';
 import getPhotos from 'lib/photos';
 
@@ -44,14 +41,20 @@ const Home: NextPage<Props> = ({ photosData }) => {
                 <h1 className='text-2xl font-bold'>投稿一覧</h1>
             </div>
             <div>
-                <div className='p-7'>
-                    <Card
-                        title={photosData.photos.contents[0].title}
-                        description={photosData.photos.contents[0].description}
-                        img={photosData.photos.contents[0].image.url}
-                        width={photosData.photos.contents[0].image.width}
-                        height={photosData.photos.contents[0].image.height}
-                    />
+                <div>
+                    {photosData.photos.contents.map((value, key) => {
+                        return (
+                            <div className='p-7' key={key}>
+                                <Card
+                                    title={value.title}
+                                    description={value.description}
+                                    img={value.image.url}
+                                    width={value.image.width}
+                                    height={value.image.height}
+                                />
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </div>
