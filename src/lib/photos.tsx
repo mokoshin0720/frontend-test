@@ -9,9 +9,15 @@ const getPhotos = async () => {
 
     const photos = await res.json();
 
+    photos.contents = photos.contents.sort(comparison);
+
     return {
         photos,
     };
+};
+
+const comparison = (a: any, b: any) => {
+    return a.displayOrder - b.displayOrder;
 };
 
 export default getPhotos;
