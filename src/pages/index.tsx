@@ -1,28 +1,6 @@
 import type { NextPage, GetStaticProps } from 'next';
 import Card from '@/components/organisms/card';
-import getPhotos from 'lib/photos';
-
-type Props = {
-    photosData: {
-        photos: {
-            contents: Content[];
-            totalCount: number;
-            offset: number;
-            limit: number;
-        };
-    };
-};
-
-type Content = {
-    id: string;
-    title: string;
-    description: string;
-    image: {
-        url: string;
-        height: number;
-        width: number;
-    };
-};
+import getPhotos, { Props } from 'lib/photos';
 
 export const getStaticProps: GetStaticProps = async () => {
     const photosData = await getPhotos();
