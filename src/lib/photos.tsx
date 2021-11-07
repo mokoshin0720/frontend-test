@@ -1,15 +1,11 @@
-export type Props = {
-    photosData: {
-        photos: {
-            contents: Content[];
-            totalCount: number;
-            offset: number;
-            limit: number;
-        };
-    };
+export type Photos = {
+    contents: Content[];
+    totalCount: number;
+    offset: number;
+    limit: number;
 };
 
-type Content = {
+export type Content = {
     id: string;
     title: string;
     description: string;
@@ -23,8 +19,9 @@ type Content = {
 const getPhotos = async () => {
     const myHeaders = new Headers();
     myHeaders.append('X-API-KEY', 'b279aadc-834e-4977-80e2-e7ba2c825bb7');
+    const url: string = `https://ispec-test.microcms.io/api/v1/photo`;
 
-    const res: Response | null = await fetch(`https://ispec-test.microcms.io/api/v1/photo`, {
+    const res: Response | null = await fetch(url, {
         method: 'GET',
         headers: myHeaders,
     })
@@ -36,9 +33,9 @@ const getPhotos = async () => {
 
     if (!res) return null;
 
-    const photos = await res
+    const photos: Photos | null = await res
         .json()
-        .then((json: Props) => json)
+        .then((photos: Photos) => photos)
         .catch((error) => {
             console.log(error);
             return null;
