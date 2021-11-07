@@ -48,28 +48,9 @@ const Home: NextPage<Props> = ({ photosData }) => {
                     <Card
                         title={photosData.photos.contents[0].title}
                         description={photosData.photos.contents[0].description}
-                        img={cardPic1}
-                    />
-                </div>
-                <div className='p-7'>
-                    <Card
-                        title={photosData.photos.contents[1].title}
-                        description={photosData.photos.contents[1].description}
-                        img={cardPic1}
-                    />
-                </div>
-                <div className='p-7'>
-                    <Card
-                        title={photosData.photos.contents[2].title}
-                        description={photosData.photos.contents[2].description}
-                        img={cardPic1}
-                    />
-                </div>
-                <div className='p-7'>
-                    <Card
-                        title={photosData.photos.contents[3].title}
-                        description={photosData.photos.contents[3].description}
-                        img={cardPic1}
+                        img={photosData.photos.contents[0].image.url}
+                        width={photosData.photos.contents[0].image.width}
+                        height={photosData.photos.contents[0].image.height}
                     />
                 </div>
             </div>
