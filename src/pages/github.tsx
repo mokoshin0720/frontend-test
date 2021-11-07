@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next';
+import { GetStaticProps, NextPage } from 'next';
 import getPhotos from 'lib/photos';
 
 type Props = {
@@ -33,11 +33,9 @@ export const getStaticProps: GetStaticProps = async () => {
     };
 };
 
-const Photos = ({ photosData }: Props) => {
+const Photos: NextPage<Props> = ({ photosData }) => {
     const length: number = photosData.photos.totalCount;
     const id: string = photosData.photos.contents[0].id;
-    console.log(length);
-    console.log(id);
 
     return (
         <div>
