@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 interface cardProps {
     title: string;
-    content: string;
+    description: string;
     img: StaticImageData;
 }
 
@@ -14,7 +14,7 @@ const Card = (props: cardProps) => {
             </div>
             <div className='w-full p-4'>
                 <p className='text-xl font-bold'>{props.title}</p>
-                <p className='font-light text-md'>{props.content}</p>
+                <p className='font-light text-md'>{props.description}</p>
             </div>
         </div>
     );
