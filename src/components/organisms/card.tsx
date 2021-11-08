@@ -32,7 +32,7 @@ const Card = (props: cardProps) => {
             <div className='img'>
                 <Image src={props.img} alt='card' width={width} height={height} />
             </div>
-            <div className='text'>
+            <div className={style.text}>
                 <p className='title'>{props.title}</p>
                 <p className='description'>{props.description}</p>
             </div>
