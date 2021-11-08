@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import style from '../../styles/Card.module.scss';
+import style from '../../styles/modules/Card.module.scss';
 
 interface cardProps {
     title: string;
