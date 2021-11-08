@@ -18,6 +18,6 @@
             "@/components/*": ["components/*"]
         }
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/github.tsx", "src/lib/photos.tsx"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/*/*", "src/lib/photos.tsx"],
     "exclude": ["node_modules"]
 }
