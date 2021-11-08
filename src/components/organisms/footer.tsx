@@ -1,19 +1,18 @@
-import Image from 'next/image';
-import chatPic from '../../../public/chat.png';
-import homePic from '../../../public/home.png';
-import settingPic from '../../../public/setting.png';
+import ChatSVG from '../../../public/chat.svg';
+import HomeSVG from '../../../public/home.svg';
+import SettingSVG from '../../../public/setting.svg';
 
 const Footer = () => {
     return (
         <div className='flex justify-evenly p-4 shadow'>
             <div>
-                <Image src={homePic} width={32} height={32} alt='home' />
+                <HomeSVG />
             </div>
             <div>
-                <Image src={chatPic} width={32} height={32} alt='chat' />
+                <ChatSVG />
             </div>
             <div>
-                <Image src={settingPic} width={32} height={32} alt='setting' />
+                <SettingSVG />
             </div>
         </div>
     );
