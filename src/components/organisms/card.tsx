@@ -8,9 +8,14 @@ interface cardProps {
     height: number;
 }
 
+const resize = (rawWidth: number, rawHeight: number, size: number): number[] => {
+    const width: number = size;
+    const height: number = width * (rawHeight / rawWidth);
+    return [width, height];
+};
+
 const Card = (props: cardProps) => {
-    const width: number = 500;
-    const height: number = width * (props.height / props.width);
+    const [width, height]: number[] = resize(props.width, props.height, 500);
 
     return (
         <div className='overflow-hidden rounded-lg h-90 w-80 m-auto bg-white'>
