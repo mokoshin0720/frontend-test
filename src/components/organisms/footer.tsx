@@ -7,13 +7,19 @@ const Footer = () => {
     return (
         <div className={style.container}>
             <div>
-                <HomeSVG />
+                <button>
+                    <HomeSVG />
+                </button>
             </div>
             <div>
-                <ChatSVG />
+                <button>
+                    <ChatSVG />
+                </button>
             </div>
             <div>
-                <SettingSVG />
+                <button>
+                    <SettingSVG />
+                </button>
             </div>
         </div>
     );
