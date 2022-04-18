@@ -1,7 +1,9 @@
+// path指定
 import ChatSVG from '../../../public/chat.svg';
 import HomeSVG from '../../../public/home.svg';
 import SettingSVG from '../../../public/setting.svg';
-import style from '../../styles/modules/Footer.module.scss';
+// sample
+import style from '~/src/styles/modules/Footer.module.scss';
 
 const Footer = () => {
     return (
@@ -17,6 +19,7 @@ const Footer = () => {
                 </button>
             </div>
             <div>
+                {/* routing考察 */}
                 <button>
                     <SettingSVG />
                 </button>

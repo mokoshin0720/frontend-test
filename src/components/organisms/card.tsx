@@ -1,4 +1,5 @@
 import Image from 'next/image';
+// path指定
 import style from '../../styles/modules/Card.module.scss';
 
 interface cardProps {

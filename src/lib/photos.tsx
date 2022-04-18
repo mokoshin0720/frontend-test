@@ -1,3 +1,4 @@
+// typeの位置付け
 export type Photos = {
     contents: Content[];
     totalCount: number;
@@ -16,6 +17,7 @@ export type Content = {
     };
 };
 
+// async/await, lambdaかけてて良さそう！
 const getPhotos = async () => {
     const myHeaders: Headers = new Headers();
     const X_API_KEY: string | undefined = process.env.X_API_KEY;

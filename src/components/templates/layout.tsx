@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import React from 'react';
-import Footer from 'components/organisms/footer';
+// path指定
+import Footer from '~/src/components/organisms/footer';
 
+// Propsのinterfaceも汎用性高いので、exportさせたい
 interface Props {
     title: string;
     children: React.ReactNode;
