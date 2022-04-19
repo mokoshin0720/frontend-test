@@ -2,7 +2,7 @@ import { VFC } from 'react';
 import Image from 'next/image';
 import style from '../../styles/modules/Card.module.scss';
 
-// component 層にはあまり計算ロジックを増やしたくない
+// component 層には計算ロジックをあまり書かないのがみんな助かると思います！
 interface CardProps {
     readonly title: string;
     readonly description: string;
