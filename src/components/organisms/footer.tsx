@@ -1,5 +1,5 @@
+// import ChatSVG from '@/public/chat.svg';
 import ChatSVG from '../../../public/chat.svg';
-import HomeSVG from '../../../public/home.svg';
 import SettingSVG from '../../../public/setting.svg';
 import style from '../../styles/modules/Footer.module.scss';
 
@@ -8,7 +8,7 @@ const Footer = () => {
         <div className={style.container}>
             <div>
                 <button>
-                    <HomeSVG />
+                  <img src='home.svg' />
                 </button>
             </div>
             <div>

@@ -16,37 +16,38 @@ export type Content = {
     };
 };
 
-const getPhotos = async () => {
+const getPhotos = async (): Promise<{ photos: Photos } | null> => {
     const myHeaders: Headers = new Headers();
-    const X_API_KEY: string | undefined = process.env.X_API_KEY;
-    if (X_API_KEY == undefined) {
-        return null;
+    const apiKey: string | undefined = process.env.NEXT_PUBLIC_X_API_KEY;
+
+    if (apiKey == undefined) {
+      throw new Error('エラーです')
     }
-    myHeaders.append('X-API-KEY', X_API_KEY);
+
+    myHeaders.append('X-API-KEY', apiKey);
     const url: string = `https://ispec-test.microcms.io/api/v1/photo`;
 
     const res: Response | null = await fetch(url, {
         method: 'GET',
         headers: myHeaders,
     })
-        .then((res) => res)
         .catch((error) => {
             console.log(error);
-            return null;
+            throw new Error('通信に失敗しました');
         });
 
     if (!res) return null;
 
     const photos: Photos | null = await res
         .json()
-        .then((photos: Photos) => photos)
-        .catch((error) => {
-            console.log(error);
-            return null;
-        });
+        // .catch((error) => {
+        //     console.log(error);
+        //     return null;
+        // });
 
     if (!photos) return null;
 
+    // api層でアプリケーションロジックを書くと用件変更の時に大変になっちゃいます
     photos.contents = photos.contents.sort(comparison);
 
     return {
