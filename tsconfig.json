@@ -15,9 +15,10 @@
         "jsx": "preserve",
         "baseUrl": "src",
         "paths": {
-            "@/components/*": ["components/*"]
+            "@/components/*": ["components/*"],
+            "@/*": ["./*"]
         }
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/*/*", "src/lib/photos.tsx"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/*/*", "src/lib/photos.ts"],
     "exclude": ["node_modules"]
 }
