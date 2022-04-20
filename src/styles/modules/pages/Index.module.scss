@@ -1,0 +1,30 @@
+@use "../../variables" as *;
+
+.container {
+    width: 100%;
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    width: 100%;
+    margin-bottom: 16px;
+
+    .pageTitle {
+        padding-top: 36px;
+        font-weight: 900;
+        font-size: 22px;
+        line-height: 32px;
+        letter-spacing: 0.06em;
+        color: map-get($colors, text-black);
+    }
+}
+
+.contents {
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 24px;
+}

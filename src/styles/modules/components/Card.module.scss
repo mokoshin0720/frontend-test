@@ -1,31 +1,28 @@
+@use "../../variables" as *;
+
 .card {
-    background-color: white;
+    background-color: map-get($colors, background-white);
     width: 100%;
-    max-width: 335px;
-    height: 100%;
     border-radius: 10px;
     overflow: hidden;
-    [class='img'] {
-        width: 100%;
-    }
 }
 
 .text {
     padding: 10px 12px;
-    color: blue;
-    [class='title'] {
+
+    .title {
         font-weight: 900;
         font-size: 18px;
         line-height: 26px;
         letter-spacing: 0.06em;
-        color: black;
+        color: map-get($colors, text-black);
     }
-    [class='description'] {
-        margin: 5px 0px 0px 0px;
+    .description {
+        margin-top: 8px;
         font-size: 13px;
         line-height: 19px;
         text-align: justify;
         letter-spacing: 0.01em;
-        color: black;
+        color: map-get($colors, text-black);
     }
 }

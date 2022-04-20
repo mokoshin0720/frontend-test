@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import style from '../../styles/modules/Card.module.scss';
+import style from '../../styles/modules/components/Card.module.scss';
 
 interface cardProps {
     title: string;
@@ -9,26 +9,24 @@ interface cardProps {
     height: number;
 }
 
-const resize = (rawWidth: number, rawHeight: number, size: number): number[] => {
-    const width: number = size;
-    const height: number = width * (rawHeight / rawWidth);
-    return [width, height];
-};
-
-const Card = (props: cardProps) => {
-    const [width, height]: number[] = resize(props.width, props.height, 500);
-
-    return (
-        <div className={style.card}>
-            <div className='img'>
-                <Image src={props.img} alt='card' width={width} height={height} />
-            </div>
-            <div className={style.text}>
-                <p className='title'>{props.title}</p>
-                <p className='description'>{props.description}</p>
-            </div>
+const Card = (props: cardProps) => (
+    <div className={style.card}>
+        <Image
+            src={props.img}
+            alt='投稿写真'
+            width={500}
+            height={240}
+            layout={'responsive'}
+            objectFit={'cover'} />
+        <div className={style.text}>
+            <h2 className={style.title}>
+                {props.title}
+            </h2>
+            <p className={style.description}>
+                {props.description}
+            </p>
         </div>
-    );
-};
+    </div>
+)
 
 export default Card;
